@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(this.toolbar)
 
         // Set initialfragment
-        fragmentManager.beginTransaction().replace(R.id.frame_container, this.fragmentFactory(Views.PAGES)).commit()
+        renderView(Views.INFORMATION)
 
         // Build navigation drawer
         this.result = DrawerBuilder(this)
@@ -59,13 +59,13 @@ class MainActivity : AppCompatActivity() {
                     Log.d("NAV", "Selected position ${position.toString()} and id: ${item.identifier}")
                     when (item.identifier) {
                         Views.PAGES.ordinal -> {
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, this.fragmentFactory(Views.PAGES)).commit()
+                            renderView(Views.PAGES)
                         }
                         Views.ACCOUNTS.ordinal -> {
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, this.fragmentFactory(Views.ACCOUNTS)).commit()
+                            renderView(Views.ACCOUNTS)
                         }
                         Views.INFORMATION.ordinal -> {
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, this.fragmentFactory(Views.INFORMATION)).commit()
+                            renderView(Views.INFORMATION)
                         }
                     }
                     false
@@ -81,6 +81,20 @@ class MainActivity : AppCompatActivity() {
             Views.INFORMATION -> return InformationFragment()
             else -> return PagesFragment()
         }
+    }
+
+    fun titleFor(view: Views): String {
+        when (view) {
+            Views.PAGES -> return "Páginas"
+            Views.ACCOUNTS -> return "Cuentas"
+            Views.INFORMATION -> return "Información"
+            else -> return "Mapas UC"
+        }
+    }
+
+    fun renderView(view: Views) {
+        supportActionBar?.title = this.titleFor(view)
+        fragmentManager.beginTransaction().replace(R.id.frame_container, this.fragmentFactory(view)).commit()
     }
 
     override fun onBackPressed() {
