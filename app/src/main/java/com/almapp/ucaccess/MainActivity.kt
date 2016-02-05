@@ -44,4 +44,12 @@ class MainActivity : AppCompatActivity() {
                 .withSavedInstance(savedInstanceState)
                 .build()
     }
+
+    override fun onBackPressed() {
+        if (this.result?.isDrawerOpen as Boolean) {
+            this.result!!.closeDrawer()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
