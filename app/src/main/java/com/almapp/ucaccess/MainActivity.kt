@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,11 +17,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+        setSupportActionBar(this.toolbar)
 
         this.result = DrawerBuilder(this)
-                .withRootView(R.id.drawer_container)
+                .withRootView(this.drawer_container)
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
@@ -28,5 +28,4 @@ class MainActivity : AppCompatActivity() {
                 .withSavedInstance(savedInstanceState)
                 .build()
     }
-
 }
