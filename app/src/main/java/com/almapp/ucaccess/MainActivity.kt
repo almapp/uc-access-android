@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(this.toolbar)
 
         // Set initialfragment
-        renderView(Views.INFORMATION)
+        renderView(Views.PAGES)
 
         // Build navigation drawer
         this.result = DrawerBuilder(this)

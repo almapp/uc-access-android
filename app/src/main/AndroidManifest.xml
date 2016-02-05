@@ -8,6 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="homepage" android:value="https://github.com/almapp/uc-access-android#readme" />
+        <meta-data android:name="license" android:value="GPL-3.0" />
+        <meta-data android:name="author.name" android:value="Patricio López Juri" />
+        <meta-data android:name="author.email" android:value="patricio@lopezjuri.com" />
+        <meta-data android:name="author.url" android:value="https://lopezjuri.com" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
