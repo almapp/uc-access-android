@@ -1,6 +1,7 @@
-package com.almapp.ucaccess
+package com.almapp.ucaccess.fragments
 
 
+import android.R
 import android.app.Fragment
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -47,7 +48,7 @@ class InformationFragment : Fragment() {
                     }
 
                     rippleView {
-                        include<TextView>(android.R.layout.simple_list_item_1) {
+                        include<TextView>(R.layout.simple_list_item_1) {
                             text = "Ir al formulario"
                             onClick { open(FORM) }
                         }
@@ -64,13 +65,13 @@ class InformationFragment : Fragment() {
                         height = sp(48)
                     }
 
-                    include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                    include<TwoLineListItem>(R.layout.simple_list_item_2) {
                         text1.text = "Aplicación no oficial de la PUC"
                         text2.text = "Por y para la comunidad"
                     }
 
                     rippleView {
-                        include<TextView>(android.R.layout.simple_list_item_1) {
+                        include<TextView>(R.layout.simple_list_item_1) {
                             text = "Política de privacidad"
                             onClick { open(POLICY) }
                         }
@@ -87,18 +88,18 @@ class InformationFragment : Fragment() {
                         height = sp(48)
                     }
 
-                    include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                    include<TwoLineListItem>(R.layout.simple_list_item_2) {
                         text1.text = "Versión"
                         text2.text = meta.versionName
                     }
 
-                    include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                    include<TwoLineListItem>(R.layout.simple_list_item_2) {
                         text1.text = "Licencia"
                         text2.text = manifest.getString("license")
                     }
 
                     rippleView {
-                        include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                        include<TwoLineListItem>(R.layout.simple_list_item_2) {
                             text1.text = "Repositorio"
                             text2.text = manifest.getString("homepage")
                             onClick { open(manifest.getString("homepage")) }
@@ -116,12 +117,12 @@ class InformationFragment : Fragment() {
                         height = sp(48)
                     }
 
-                    include<TextView>(android.R.layout.simple_list_item_1) {
+                    include<TextView>(R.layout.simple_list_item_1) {
                         text = manifest.getString("author.name")
                     }
 
                     rippleView {
-                        include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                        include<TwoLineListItem>(R.layout.simple_list_item_2) {
                             text1.text = "Email"
                             text2.text = manifest.getString("author.email")
                             onClick { open("mailto:${manifest.getString("author.email")}") }
@@ -129,7 +130,7 @@ class InformationFragment : Fragment() {
                     }
 
                     rippleView {
-                        include<TwoLineListItem>(android.R.layout.simple_list_item_2) {
+                        include<TwoLineListItem>(R.layout.simple_list_item_2) {
                             text1.text = "URL"
                             text2.text = manifest.getString("author.url")
                             onClick { open(manifest.getString("author.url")) }

@@ -4,6 +4,8 @@ import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.almapp.ucaccess.fragments.InformationFragment
+import com.almapp.ucaccess.fragments.PagesFragment
 import com.mikepenz.ionicons_typeface_library.Ionicons
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
