@@ -31,6 +31,7 @@ dependencies {
     // Android
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:support-v13:+'
 
     // Kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -41,6 +42,7 @@ dependencies {
         transitive = true
     }
     compile 'com.balysv:material-ripple:1.0.2'
+    compile 'io.karim:materialtabs:2.0.3'
 
     // Icons (fonts)
     compile 'com.mikepenz:iconics-core:2.5.5@aar'
