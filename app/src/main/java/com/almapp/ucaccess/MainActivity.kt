@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.almapp.ucaccess.fragments.InformationFragment
 import com.almapp.ucaccess.fragments.PagesFragment
+import com.almapp.ucaccess.lib.models.WebPageFetcher
 import com.mikepenz.ionicons_typeface_library.Ionicons
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -13,6 +14,9 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import kotlinx.android.synthetic.main.activity_main.*
+import nl.komponents.kovenant.android.startKovenant
+import nl.komponents.kovenant.android.stopKovenant
+import nl.komponents.kovenant.then
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Setup dependencies
+        startKovenant()
 
         // Setup toolbar
         setSupportActionBar(this.toolbar)
@@ -74,6 +81,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 .withSavedInstance(savedInstanceState)
                 .build()
+    }
+
+    override fun onDestroy() {
+        stopKovenant()
+        super.onDestroy()
     }
 
     fun fragmentFactory(view: Views): Fragment {

@@ -31,10 +31,20 @@ dependencies {
     // Android
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
-    compile 'com.android.support:support-v13:+'
+    compile 'com.android.support:support-v13:23.1.1'
 
     // Kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Promise
+    compile 'nl.komponents.kovenant:kovenant-core:3.0.0'
+    compile 'nl.komponents.kovenant:kovenant-android:3.0.0'
+    compile 'nl.komponents.kovenant:kovenant-combine:3.0.0'
+    compile 'nl.komponents.kovenant:kovenant-jvm:3.0.0'
+    compile 'nl.komponents.kovenant:kovenant-functional:3.0.0'
+
+    // HTTP Client
+    compile 'com.github.kittinunf.fuel:fuel-android:1.0.0-rc-1036' //for Android
 
     // UI
     compile 'org.jetbrains.anko:anko-sdk15:0.8.2' // sdk19, sdk21, sdk23 are also available
@@ -42,7 +52,6 @@ dependencies {
         transitive = true
     }
     compile 'com.balysv:material-ripple:1.0.2'
-    compile 'io.karim:materialtabs:2.0.3'
 
     // Icons (fonts)
     compile 'com.mikepenz:iconics-core:2.5.5@aar'
@@ -60,4 +69,5 @@ buildscript {
 }
 repositories {
     mavenCentral()
+    jcenter()
 }
