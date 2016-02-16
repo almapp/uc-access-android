@@ -17,7 +17,16 @@ class WebPageFetcher(val URL: String) {
             val array = JSONArray(String(bytes))
 
             listOf(
-                    WebPageGroup(name = "Oficiales"),
+                    WebPageGroup(name = "Oficiales", categories = listOf(
+                            WebPageCategory(name = "Requieren Credenciales", webpages = listOf(
+                                    WebPage(name = "Portal UC"),
+                                    WebPage(name = "Cursos UC")
+                            )),
+                            WebPageCategory(name = "Requieren Holas", webpages = listOf(
+                                    WebPage(name = "Otros UC"),
+                                    WebPage(name = "Ewe UC")
+                            ))
+                    )),
                     WebPageGroup(name = "Comunidad"),
                     WebPageGroup(name = "Partidos"),
                     WebPageGroup(name = "Facultades")
