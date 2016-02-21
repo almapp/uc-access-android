@@ -10,11 +10,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.almapp.ucaccess.R
 import com.almapp.ucaccess.lib.models.WebPageCategory
 import com.almapp.ucaccess.lib.models.WebPageFetcher
 import com.almapp.ucaccess.lib.models.WebPageGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_pages.view.*
 import nl.komponents.kovenant.ui.failUi
 import nl.komponents.kovenant.ui.successUi
@@ -105,15 +107,18 @@ class PagesFragment : Fragment() {
         override fun getChildView(groupPosition: Int, childPosition: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup?): View? {
             val webpage = this.categories[groupPosition].webpages[childPosition]
 
-            val view = convertView ?: with(this.context) {
-                verticalLayout {
-                    textView {
-                        id = 100
-                    }
-                }
-            }
+            val view = convertView ?: CellFragment<Context>().createView(AnkoContext.create(this.context))
+            view.find<TextView>(id = CellFragment.TITLE_ID).text = webpage.name
+            view.find<TextView>(id = CellFragment.DETAIL_ID).text = webpage.description
 
-            view.find<TextView>(id = 100).text = webpage.name
+            Picasso.with(this.context).load(webpage.imageURL)
+                    //.resize(50, 50)
+                    //.centerCrop()
+                    //.centerInside()
+                    .placeholder(R.drawable.icon)
+                    .error(R.drawable.icon)
+                    .into(view.find<ImageView>(id = CellFragment.IMAGE_ID))
+
             return view
         }
     }

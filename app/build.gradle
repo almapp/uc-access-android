@@ -52,6 +52,7 @@ dependencies {
         transitive = true
     }
     compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     // Icons (fonts)
     compile 'com.mikepenz:iconics-core:2.5.5@aar'
