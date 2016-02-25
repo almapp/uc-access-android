@@ -44,7 +44,7 @@ dependencies {
     compile 'nl.komponents.kovenant:kovenant-functional:3.0.0'
 
     // HTTP Client
-    compile 'com.github.kittinunf.fuel:fuel-android:1.0.0-rc-1036' //for Android
+    compile 'com.github.kittinunf.fuel:fuel-android:1.0.0'
 
     // UI
     compile 'org.jetbrains.anko:anko-sdk15:0.8.2' // sdk19, sdk21, sdk23 are also available
@@ -59,7 +59,7 @@ dependencies {
     compile 'com.mikepenz:ionicons-typeface:2.0.1.1@aar'
 }
 buildscript {
-    ext.kotlin_version = '1.0.0-rc-1036'
+    ext.kotlin_version = '1.0.0'
     repositories {
         mavenCentral()
     }
