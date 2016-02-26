@@ -20,8 +20,6 @@ class CellFragment<T> : AnkoComponent<T> {
     override fun createView(ui: AnkoContext<T>) = ui.apply {
         val height = sp(92)
         linearLayout {
-            lparams(width = matchParent, height = height)
-
             imageView(R.drawable.icon) {
                 id = CellFragment.IMAGE_ID
             }.lparams(width = height, height = height) {
