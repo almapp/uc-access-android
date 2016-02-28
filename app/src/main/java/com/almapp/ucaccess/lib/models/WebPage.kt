@@ -1,5 +1,7 @@
 package com.almapp.ucaccess.lib.models
 
+import java.io.Serializable
+
 /**
  * Created by patriciolopez on 19-01-16.
  */
@@ -10,4 +12,4 @@ data class WebPage(
         val URL: String? = null,
         val imageURL: String? = null,
         var selected: Boolean = true
-)
+) : Serializable

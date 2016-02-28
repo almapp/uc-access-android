@@ -27,6 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".WebBrowserActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>

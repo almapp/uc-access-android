@@ -13,6 +13,7 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.almapp.ucaccess.R
+import com.almapp.ucaccess.WebBrowserActivity
 import com.almapp.ucaccess.lib.models.WebPageCategory
 import com.almapp.ucaccess.lib.models.WebPageFetcher
 import com.almapp.ucaccess.lib.models.WebPageGroup
@@ -67,8 +68,17 @@ class PagesFragment : Fragment() {
             return with(ctx) {
                 frameLayout {
                     expandableListView() {
+                        // Setup adapter
                         setAdapter(MyListAdapter(context, group.categories))
-                        group.categories.forEachIndexed { i, category -> expandGroup(i) } // Start expanded
+
+                        // Start expanded
+                        group.categories.forEachIndexed { i, category -> expandGroup(i) }
+
+                        // On Click
+                        onChildClick { expandableListView, view, groupPosition, childPosition, id ->
+                            startActivity<WebBrowserActivity>("webpage" to group.categories[groupPosition].webpages[childPosition])
+                            true
+                        }
                     }
                 }
             }
